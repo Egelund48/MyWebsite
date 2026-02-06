@@ -1,0 +1,116 @@
+.Homepage {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;  /* Add this */
+}
+
+/* Dark overlay so text stays readable */
+.Homepage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;  /* Changed from inset: 0 */
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.Homepage > * {
+    position: relative;
+    z-index: 1;
+}
+.content {
+    max-width: 900px;          
+    width: 100%;        
+    padding: 5rem 2.5rem;      
+    text-align: center;       
+}
+
+.content h1 {
+    text-align: left;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.content h2 {
+    font-size: 1.5rem;        
+    line-height: 1.8;          
+    color: #ddd;
+    margin-bottom: 1.5rem;
+    text-align: left;        
+}
+
+
+/* Image of me*/ 
+.header-section {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+    position: relative;
+    left: -4.5rem;  /* Shifts it left visually */
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 30%;
+    object-fit: cover;
+    border: 1px solid #fff;
+}
+
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: left;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: flex;
+  align-items: left;
+  gap: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #fff;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.social-icon {
+  font-size: 1.5rem;
+}
+
+.course-list {
+    text-align: left;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #ddd;
+    margin-bottom: 1.5rem;
+    list-style-position: inside;  /* Keeps bullets aligned nicely */
+    padding-left: 2.5rem;  /* Added: creates indentation */
+}
+
+.course-list li {
+  margin-bottom: 0.5rem;
+}

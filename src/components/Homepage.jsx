@@ -12,9 +12,11 @@ function Homepage() {
         <div className="content">
           <div className="header-section">
             <img src={image} alt="Christian Egelund Hansen" className="profile-image" />
-            <h1>Christian Egelund Hansen</h1>
+            <div className="title-wrapper">
+              <h1>Christian Egelund Hansen</h1>
+            </div>
           </div>
-          <h2>
+          <p>
             I'm a 22 year old studying Computer science at Syddansk University. Living in Odense, Denmark. Im currently on my fourth semester, 
             taking the classes:     
             <ul className="course-list">
@@ -25,7 +27,7 @@ function Homepage() {
             </ul>
             I am passionate about software development and actively seeking professional opportunities. 
             For more information, please feel free to explore my social media profiles or review my CV.          
-            </h2>
+            </p>
           <div className="social-links">
             <a href="https://www.linkedin.com/in/christian-egelund-hansen-94586a298/" target="_blank" rel="noopener noreferrer">
               <FaLinkedin className="social-icon" />

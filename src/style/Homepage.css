@@ -33,7 +33,6 @@
 }
 
 .content h1 {
-    text-align: left;
     font-size: 3rem;
     margin-bottom: 1rem;
 }
@@ -46,6 +45,12 @@
     text-align: left;        
 }
 
+.content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ddd;
+  text-align: left;
+}
 
 /* Image of me*/ 
 .header-section {
@@ -57,7 +62,17 @@
     margin-bottom: 2rem;
     text-align: left;
     position: relative;
-    left: -4.5rem;  
+    left: -10rem;  
+}
+
+.title-wrapper {
+    position: relative;
+    left: -1rem; /* moves the H1 left without moving image */
+}
+
+.header-section h1 {
+    font-size: 3rem;
+    margin: 0;
 }
 
 .profile-image {
@@ -101,8 +116,9 @@
 }
 
 .course-list {
+    padding-top: 10px;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 1.8;
     color: #ddd;
     margin-bottom: 1.5rem;

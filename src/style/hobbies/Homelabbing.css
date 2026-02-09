@@ -1,91 +1,114 @@
+/* Page wrapper */
 .Homelabbing {
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative; 
+  background: #0b0b0b;
+  color: #fff;
 }
 
-.Homelabbing::before {
-    content: "";
-    position: absolute; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; 
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 0;
+/* Sections */
+.section {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.Homelabbing > * {
-    position: relative;
-    z-index: 1;
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
+/* Subtle visual rhythm */
+.section:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.section:nth-child(even) {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* Content container */
 .content {
-    max-width: 900px;          
-    width: 100%;        
-    padding: 5rem 2.5rem;      
-    text-align: center;   
+  max-width: 1000px;
+  width: 100%;
 }
 
+/* Headings & text */
 .content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-align: left;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .content h2 {
-    font-size: 1.5rem;
-    line-height: 1.8;
-    color: #ddd;
-    text-align: left;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  text-align: left;
 }
 
-/* itemizes */ 
-.spec-list {
-    font-size: 1.2rem; 
-    margin-left: 2rem;       
-    line-height: 1.6;        
-    color: #dddddd;           
+.content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ddd;
+  text-align: left;
 }
 
-/* Optional: smaller bullets */
-.spec-list li {
-    margin-bottom: 0.5rem;
-    list-style-type: disc;   
-}
-/* Image container */
-.my-server {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Split layout */
+.split {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
 }
 
-/* Image styling */
-.my-server img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Hover effect */
-.my-server img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+/* Pill list */
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  padding: 0;
 }
 
-/* Caption styling */
-.my-server .caption {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    color: #ccc;
-    text-align: center;
+.pill-list li {
+  list-style: none;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  backdrop-filter: blur(6px);
+}
+
+/* Image */
+.image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease;
+}
+
+.image img:hover {
+  transform: scale(1.03);
+}
+
+.caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #bbb;
+  text-align: center;
 }

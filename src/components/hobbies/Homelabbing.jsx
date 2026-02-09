@@ -103,7 +103,7 @@ function Homelabbing() {
         <section className="section other-things">
           <div className="content">
             <div className="other-things-title">
-              <h2>PiHole and Docker</h2>
+              <h2>Pi-hole and Docker</h2>
             </div>
             
             <div className="projects-grid">
@@ -114,7 +114,7 @@ function Homelabbing() {
                 </div>
                 <h3>Pi-hole</h3>
                 <p>
-                  Network-wide ad blocking running in Docker. It's satisfying watching it 
+                  I use Pi-hole for Network-wide ad blocking which is running in Docker. It's satisfying watching it 
                   filter out thousands of ad requests daily without needing browser extensions 
                   on every device.
                 </p>

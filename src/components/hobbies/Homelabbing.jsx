@@ -47,7 +47,7 @@ function Homelabbing() {
         <section className="section ds124">
           <div className="content split">
             <div className="text">
-              <h2>Synology DS124</h2>
+              <h2>My Synology DS124</h2>
 
               <ul className="pill-list">
                 <li>1 GB DDR4 RAM</li>
@@ -59,9 +59,9 @@ function Homelabbing() {
               </ul>
 
               <p>
-                I chose the DS124 mainly because of its price and simplicity.
-                Synology’s interface makes it very beginner-friendly, while
-                still allowing SSH access for more advanced use.
+                The main reason i got the DS124 was the low price and the beginner friendly interface. 
+                It has an amazing GUI, which makes everything 10x easier for beginners, but still allows users to access it via SSH. 
+                There is however a major drawback, since it only has room for one 3.5 HHD/2.5 SSD. This means i only got 4tb or storage (and no room for a failed harddrive). 
               </p>
             </div>
 
@@ -79,7 +79,7 @@ function Homelabbing() {
             <p>
               Jellyfin is my primary media server. It allows me to stream movies
               and shows locally without relying on third-party services.
-              Everything runs on my own hardware — fully under my control.
+              Everything runs on my own hardware. 
             </p>
           </div>
         </section>

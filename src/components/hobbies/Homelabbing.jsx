@@ -1,6 +1,10 @@
 import { useEffect } from 'react'
 import Navbar from '../Navbar.jsx'
 import MyServerImage from '../../assets/images/HomelabbingImages/MyServer.jpg'
+import jellyfinImage from '../../assets/images/HomelabbingImages/jellyfin.png'
+import jellyfinLogo from '../../assets/images/HomelabbingImages/jellyfin_logo.png'
+import piholeLogo from '../../assets/images/HomelabbingImages/pihole_logo.png'
+import dockerLogo from '../../assets/images/HomelabbingImages/docker_logo.png'
 import '../../style/hobbies/Homelabbing.css'
 
 function Homelabbing() {
@@ -75,15 +79,62 @@ function Homelabbing() {
         {/* JELLYFIN */}
         <section className="section jellyfin">
           <div className="content">
-            <h2>Jellyfin</h2>
+            <div className="title-with-logo">
+              <h2>My Media Server</h2>
+              <img src={jellyfinLogo} alt="Jellyfin Logo" className="title-logo" />
+            </div>
             <p>
-              Jellyfin is my primary media server. It allows me to stream movies
-              and shows locally without relying on third-party services.
-              Everything runs on my own hardware. 
+              I was quite tired on relying on Netflix, Viaplay etc. to have the shows that i liked. One of the first things i therefore
+              chose to have on my server was Jellyfin. 
+            </p>
+            <div className="jellyfin-image">
+              <img src={jellyfinImage} alt="Jellyfin"/>
+            </div>
+            <p>
+              Jellyfin enables you to collect, manage, and stream your media. Run the Jellyfin server on your system and gain access to the leading free-software entertainment system, bells and whistles included.
+            </p>
+            <p>
+              Since Jellyfin build for Movies, Shows, Music, Live TV & DVR, Books, Photos and Syncplay, my main goal is to have both Movies, TV-Shows but also Family Photos/Films. Due to my server only having one HDD, 
+              I won't put files on the server, that i cant afford to lose. My goal is also to set it up with Prowlarr, Sonarr and Radarr to my qbittorrent and jellyfin, so i can easily find different Linux-ISO's. However im focusing on other things at the moment. 
             </p>
           </div>
         </section>
 
+        <section className="section other-things">
+          <div className="content">
+            <div className="other-things-title">
+              <h2>PiHole and Docker</h2>
+            </div>
+            
+            <div className="projects-grid">
+              {/* Pi-hole Card */}
+              <div className="project-card">
+                <div className="project-icon">
+                  <img src={piholeLogo} alt="pihole logo"/>
+                </div>
+                <h3>Pi-hole</h3>
+                <p>
+                  Network-wide ad blocking running in Docker. It's satisfying watching it 
+                  filter out thousands of ad requests daily without needing browser extensions 
+                  on every device.
+                </p>
+              </div>
+
+              {/* File Server & Docker Card */}
+              <div className="project-card">
+                <div className="project-icon">
+                  <img src={dockerLogo} alt="docker logo"/>
+                </div>
+                <h3>File Server & Containers</h3>
+                <p>
+                  My NAS serves as a central file server for backups and sharing between devices. 
+                  Everything runs in Docker containers, making it easy to experiment without 
+                  breaking my system.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   )

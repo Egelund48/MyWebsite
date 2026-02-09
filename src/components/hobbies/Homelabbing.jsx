@@ -37,7 +37,7 @@ function Homelabbing() {
         {/* INTRO */}
         <section className="section intro">
           <div className="content">
-            <h1>Homelabbing</h1>
+            <h1>My Homelab</h1>
             <p>
               My interest for homelabbing started in October 2025, when I got my
               first NAS — a <strong>Synology DS124</strong>.  

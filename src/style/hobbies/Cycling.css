@@ -1,0 +1,250 @@
+/* Page wrapper */
+.Cycling {
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* INTRO SECTION */
+
+.intro {
+    position: relative;
+    height: 120vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.intro-bg {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 140%;
+    object-fit: cover;
+    will-change: transform;
+    transition: transform 0.1s linear;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.85)
+    );
+    z-index: 1;
+}
+
+.fade-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px; 
+    background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.3) 30%,
+    rgba(0, 0, 0, 0.6) 60%,
+    rgba(0, 0, 0, 0.85) 80%,
+    rgba(0, 0, 0, 1) 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Content */
+.intro .content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.intro h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #e0e0e0 0%, #ffffff 50%, #cccccc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.intro p {
+    font-size: 1.3rem;
+    line-height: 2;
+    color: #ddd;
+}
+
+/* SECOND SECTION */
+
+.beginning {
+    min-height: 100vh;
+    background: #000;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    overflow: hidden;
+}
+
+/* Left side text */
+.beginning-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem;
+    color: white;
+    z-index: 2;
+    padding-left: 8rem; /* pushes content to the right */
+}
+
+.beginning-content h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.beginning-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ccc;
+    max-width: 800px;
+}
+
+/* Right side full image */
+.beginning-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.beginning-image img {
+    width: 80%;        
+    max-width: 500px;
+    height: auto;       
+    border-radius: 30px; 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6); 
+    transition: transform 0.3s ease;
+}
+
+.beginning-image img:hover {
+  transform: scale(1.03); 
+}
+
+.beginning-image::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  z-index: -1;
+}
+
+
+/* LEARNING SECTION */
+.learning {
+  min-height: 80vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.learning-content h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.learning-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 700px;
+  color: #ccc;
+}
+
+/* SCROLLING IMAGE SECTIONS */
+.scroll-image {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #000;
+}
+
+.scroll-image img {
+  width: 100%;
+  max-height: 100vh;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  transition: transform 0.3s ease;
+}
+
+.scroll-image img:hover {
+  transform: scale(1.02);
+}
+
+.scroll-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+  z-index: 1;
+}
+
+/* FADE-IN SECTIONS */
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .beginning {
+    grid-template-columns: 1fr;
+  }
+
+  .beginning-image {
+    height: 50vh;
+  }
+
+  .beginning-content {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .learning {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro {
+    height: 110vh;
+  }
+
+  .intro h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro p {
+    font-size: 1.1rem;
+  }
+}

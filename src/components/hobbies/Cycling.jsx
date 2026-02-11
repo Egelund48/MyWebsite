@@ -1,18 +1,103 @@
+import { useEffect, useRef } from "react"
 import Navbar from '../Navbar.jsx'
-import '../../style/hobbies/cycling.css'
+import firstBike from '../../assets/images/CyclingImages/gamlee.PNG'
+import tur from '../../assets/images/CyclingImages/img1.jpg'
+import route from '../../assets/images/CyclingImages/route.png'
+import ven from '../../assets/images/CyclingImages/ven.JPG'
+
+import '../../style/hobbies/Cycling.css'
 
 function Cycling() {
+  const imageRef = useRef(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+
+      if (imageRef.current) {
+        imageRef.current.style.transform = `translateY(${scrollY * 0.4}px)`
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  // Intersection observer for fade-in
+  useEffect(() => {
+    const sections = document.querySelectorAll(".fade-section")
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible")
+          }
+        })
+      },
+      { threshold: 0.25 }
+    )
+
+    sections.forEach(section => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <>
       <Navbar />
-      
+
       <div className="Cycling">
-        <div className="content">
-          <h1>Cycling page</h1>
-          <p>
-            Cycling bla. bla. bla. 
-          </p>
-        </div>
+
+        {/* INTRO */}
+        <section className="intro">
+          <img
+            ref={imageRef}
+            src={tur}
+            alt="Cycling background"
+            className="intro-bg"
+          />
+          <div className="overlay" />
+          <div className="fade-bottom" />
+          <div className="content">
+            <h1>My Passion for Cycling</h1>
+          </div>
+        </section>
+
+        {/* BEGINNING */}
+        <section className="beginning fade-section">
+          <div className="beginning-content">
+            <h2>The Beginning</h2>
+            <p>
+              I first got a bike in spring 2024, after a long period of illness. I wanted a new way to stay active besides running and bought a cheap roadbike. 
+              My first bike was a Giant from 1997, which had a lot of issues. I quickly realized I had to learn how to fix it myself — and I discovered that tinkering and repairing the bike is just as enjoyable as riding it.
+            </p>
+          </div>
+          <div className="beginning-image">
+            <img src={firstBike} alt="My first bike" />
+          </div>
+        </section>
+
+        {/* LEARNING SECTION */}
+        <section className="learning fade-section">
+          <div className="learning-content">
+            <h2>Learning</h2>
+            <p>
+              After learning to ride with cleats, discovering new routes, and getting more comfortable with cycling, I started enjoying the full experience — both the exercise and the freedom of exploring new places.
+            </p>
+          </div>
+        </section>
+
+        {/* SCROLLING IMAGES */}
+        <section className="scroll-image fade-section">
+          <img src={ven} alt="Cycling trip with friends" />
+        </section>
+
+        <section className="scroll-image fade-section">
+          <img src={route} alt="Longest ride" />
+        </section>
+
+        {/* Add more scrolling images sections here */}
+
       </div>
     </>
   )

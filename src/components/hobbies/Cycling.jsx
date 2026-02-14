@@ -2,13 +2,20 @@ import { useEffect, useRef } from "react"
 import Navbar from '../Navbar.jsx'
 import firstBike from '../../assets/images/CyclingImages/gamlee.PNG'
 import tur from '../../assets/images/CyclingImages/img1.jpg'
-import route from '../../assets/images/CyclingImages/route.png'
+import route from '../../assets/images/CyclingImages/fynRundt.png'
 import ven from '../../assets/images/CyclingImages/ven.JPG'
+import favRoute from '../../assets/images/CyclingImages/favRoute.PNG'
+import bestTime from '../../assets/images/CyclingImages/bestTime.PNG'
+import fynStats from '../../assets/images/CyclingImages/fynStats.PNG'
+import venner from '../../assets/images/CyclingImages/venner.JPG'
+import done from '../../assets/images/CyclingImages/færdig.jpg'
+
 
 import '../../style/hobbies/Cycling.css'
 
 function Cycling() {
   const imageRef = useRef(null)
+  const images = [ven, favRoute, bestTime,venner, done, route, fynStats, tur];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +28,7 @@ function Cycling() {
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, []); 
 
   // Intersection observer for fade-in
   useEffect(() => {
@@ -88,16 +95,23 @@ function Cycling() {
         </section>
 
         {/* SCROLLING IMAGES */}
-        <section className="scroll-image fade-section">
-          <img src={ven} alt="Cycling trip with friends" />
-        </section>
 
         <section className="scroll-image fade-section">
-          <img src={route} alt="Longest ride" />
+          {images.map((src, i) => {
+            const min = -15;
+            const max = 15;
+            const rotation = min + (i * (max - min)) / (images.length - 1);
+
+            return (
+              <img
+                key={i}
+                src={src}
+                alt={`Cycling image ${i}`}
+                style={{ '--rotation': `${rotation}deg` }} // use CSS variable
+              />
+            );
+          })}
         </section>
-
-        {/* Add more scrolling images sections here */}
-
       </div>
     </>
   )

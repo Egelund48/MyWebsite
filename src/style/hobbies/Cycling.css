@@ -171,36 +171,61 @@
 
 /* SCROLLING IMAGE SECTIONS */
 .scroll-image {
+  padding-left: 100px; 
   position: relative;
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: hidden; /* allow shadows/overlap */
   background: #000;
 }
 
 .scroll-image img {
-  width: 100%;
-  max-height: 100vh;
+  height: 440px;          /* set same height for all images */
+  width: auto; 
   object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-  transition: transform 0.3s ease;
+  margin-left: -5%;
+  cursor: pointer;
+
+  /* use CSS variable for rotation */
+  transform: rotate(var(--rotation, 0deg));
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .scroll-image img:hover {
-  transform: scale(1.02);
+  transform: rotate(0deg) scale(1.08) translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+  z-index: 5;
+}
+.scroll-image::before {
+  content: '';
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.8) 20%,
+    rgba(0,0,0,0) 50%,
+    rgba(0,0,0,0.8) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
 }
 
 .scroll-image::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+  background: radial-gradient(circle at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%);
   z-index: 1;
+  pointer-events: none;
 }
+
+
 
 /* FADE-IN SECTIONS */
 .fade-section {

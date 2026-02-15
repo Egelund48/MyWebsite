@@ -5,6 +5,7 @@ import '../style/Navbar.css'
 function Navbar() {
   const [open, setOpen] = useState(false)
   const [hobbiesOpen, setHobbiesOpen] = useState(false)
+  const [projectsOpen, setProjectsOpen] = useState(false)
 
   const closeMenu = () => {
     setOpen(false)
@@ -41,7 +42,13 @@ function Navbar() {
           <Link to="/hobbies/homelabbing" onClick={closeMenu}>Homelabbing</Link>
         </div>
 
-        <Link to="/Projects" onClick={closeMenu}>Projects</Link>
+        {/* Expandable projects */}
+        <button className={`nav-expand ${projectsOpen ? 'open' : ''}`} onClick={() => setProjectsOpen(!projectsOpen)}>
+          Projects <span className="arrow">▾</span>
+        </button>
+        <div className={`submenu-inline ${projectsOpen ? 'open' : ''}`}>
+          <Link to="/projects/FootballRatings" onClick={closeMenu}>Premier league ratings</Link>
+        </div>
       </div>
     </>
   )

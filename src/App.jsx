@@ -5,8 +5,8 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Cycling from "./components/hobbies/Cycling";
 import Homelabbing from "./components/hobbies/Homelabbing";
+import FootballRatings from "./components/projects/FootballRatings";
 
-// Function to remember last scroll position per route
 function ScrollRestoration() {
   const location = useLocation();
 
@@ -16,7 +16,7 @@ function ScrollRestoration() {
     if (savedScroll) {
       setTimeout(() => {
         window.scrollTo(0, parseInt(savedScroll));
-      }, 50); // wait for content to render
+      }, 50); 
     }
   }, [location.pathname]);
 
@@ -31,7 +31,6 @@ function ScrollRestoration() {
   return null;
 }
 
-
 function App() {
   return (
     <Router>
@@ -42,6 +41,7 @@ function App() {
         <Route path="/Projects" element={<Projects/>}/>
         <Route path="/Hobbies/Cycling" element={<Cycling/>}/>
         <Route path="/Hobbies/Homelabbing" element={<Homelabbing/>}/>
+        <Route path="/Projects/Footballratings" element={<FootballRatings/>}/>
       </Routes>
     </Router>
   );

@@ -40,6 +40,9 @@
 .delay-2 {
     animation-delay: 1.4s;
 }
+.delay-3 {
+    animation-delay: 1.7s;
+}
 
 .FootballRatings {
     min-height: 100vh;
@@ -73,35 +76,35 @@
     z-index: 1;
 }
 
-.content {
-    max-width: 900px;          
+.FootballRatings .content {
+    max-width: 1000px;          
     width: 100%;        
     padding: 5rem 2.5rem;      
     text-align: center;   
 }
 
 .content.animate-in h1 {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: 0.2s;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.2s;
 }
 
 .content.animate-in p {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: 0.4s;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.4s;
 }
 
 .content.animate-in h2 {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: 1.2s;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 1.2s;
 }
 
 .content.animate-in .course-list li {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
 }
 
 
@@ -117,36 +120,130 @@
 .content.animate-in p:nth-of-type(3) { animation-delay: 1.4s; }
 
 .FootballRatings .course-list {
-  padding-top: 1px;
-  text-align: left;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #ddd;
-  margin-bottom: 1.5rem;
-  list-style-position: inside; 
-  padding-left: 3rem;  
+    padding-top: 1px;
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ddd;
+    margin-bottom: 1.5rem;
+    list-style-position: inside; 
+    padding-left: 3rem;  
 }
 
 .FootballRatings .course-list li {
-  margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .FootballRatings .course-list {
-  padding-top: 1px;
-  text-align: left;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #ddd;
-  margin-bottom: 1.5rem;
-  list-style-position: outside; 
-  padding-left: 2rem;  
+    padding-top: 1px;
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ddd;
+    margin-bottom: 1.5rem;
+    list-style-position: outside; 
+    padding-left: 2rem;  
 }
 
 .FootballRatings .course-list li {
-  margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .FootballRatings .course-list li.show{
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Images*/ 
+.homeList img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    margin: 2rem 0;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.homeList img:hover{
+    transform: scale(1.02);
+    box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(99, 101, 108, 0.6),
+    0 0 80px rgba(129, 133, 151, 0.3);
+}
+
+
+/*API link*/
+.api-link {
+  color: #8ab4ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.api-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(138, 180, 255, 0.8);
+}
+
+
+/* Feature cards*/
+.FootballRatings .carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  margin: 3rem auto;
+}
+
+.carousel-window {
+  overflow: hidden;
+  flex: 1 1 auto;
+  max-width: none;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  max-width: 1100px; 
+  height: auto;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.slide p {
+  margin-top: 1rem;
+  color: #ccc;
+}
+
+.arrow {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  padding: 1rem 1.4rem;
+  cursor: pointer;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+}
+
+.arrow:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.85);
+  transform: scale(1.15);
+}
+
+.arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
 }

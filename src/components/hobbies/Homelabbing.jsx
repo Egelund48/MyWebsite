@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import Navbar from '../Navbar.jsx'
 import MyServerImage from '../../assets/images/HomelabbingImages/MyServer.jpg'
-import jellyfinImage from '../../assets/images/HomelabbingImages/jellyfin.png'
+import jellyfinImage from '../../assets/images/HomelabbingImages/Jellyfin.png'
 import jellyfinLogo from '../../assets/images/HomelabbingImages/jellyfin_logo.png'
 import piholeLogo from '../../assets/images/HomelabbingImages/pihole_logo.png'
 import dockerLogo from '../../assets/images/HomelabbingImages/docker_logo.png'

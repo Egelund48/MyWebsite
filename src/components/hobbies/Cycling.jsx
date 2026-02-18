@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react"
 import Navbar from '../Navbar.jsx'
-import firstBike from '../../assets/images/CyclingImages/gamlee.PNG'
+import firstBike from '../../assets/images/CyclingImages/gamlee.png'
 import tur from '../../assets/images/CyclingImages/img1.jpg'
-import route from '../../assets/images/CyclingImages/fynRundt.png'
+import route from '../../assets/images/CyclingImages/fynRundt.PNG'
 import ven from '../../assets/images/CyclingImages/ven.JPG'
 import favRoute from '../../assets/images/CyclingImages/favRoute.PNG'
 import bestTime from '../../assets/images/CyclingImages/bestTime.PNG'

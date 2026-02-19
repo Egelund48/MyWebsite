@@ -1,8 +1,9 @@
 /* Page wrapper */
 .Cycling {
-    background: #000;
-    color: #fff;
-    overflow-x: hidden;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* INTRO SECTION */
@@ -174,11 +175,13 @@
   padding-left: 100px; 
   position: relative;
   width: 100%;
+  max-width: 100vw;        /* add this */
+  overflow-x: hidden;      /* change from overflow: hidden */
+  overflow-y: visible;     /* keep shadows visible vertically if needed */
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* allow shadows/overlap */
   background: #000;
 }
 

@@ -12,4 +12,4 @@ This repository contains the source code for my personal website. The site is bu
 | Self-hosted server | Production hosting |
 | Node.js | Build environment |
 
-Check min hjemmeside ud! [christianegelundhansen.com]{http://christianegelundhansen.com/}
+Check min hjemmeside ud! [christianegelundhansen.com](http://christianegelundhansen.com/)

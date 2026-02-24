@@ -5,6 +5,8 @@ import jellyfinImage from '../../assets/images/HomelabbingImages/Jellyfin.png'
 import jellyfinLogo from '../../assets/images/HomelabbingImages/jellyfin_logo.png'
 import piholeLogo from '../../assets/images/HomelabbingImages/pihole_logo.png'
 import dockerLogo from '../../assets/images/HomelabbingImages/docker_logo.png'
+import cloudflareLogo from '../../assets/images/HomelabbingImages/cloudflare2.png'
+import serverrackLogo from '../../assets/images/HomelabbingImages/server-rack.png'
 import '../../style/hobbies/Homelabbing.css'
 
 function Homelabbing() {
@@ -103,7 +105,7 @@ function Homelabbing() {
         <section className="section other-things">
           <div className="content">
             <div className="other-things-title">
-              <h2>Pi-hole and Docker</h2>
+              <h2>Other Services Running on My Server</h2>
             </div>
             
             <div className="projects-grid">
@@ -131,6 +133,26 @@ function Homelabbing() {
                   Everything runs in Docker containers, making it easy to experiment without 
                   breaking my system.
                 </p>
+              </div>
+              <div className="project-card">
+                  <div className="project-icon">
+                     <img src={cloudflareLogo} alt="cloudflare log"/>
+                  </div>
+                  <h3>Self hosting on Cloud flare</h3>
+                    <p>
+                    I host this website on my own server, which gives me full control over how everything runs.
+                     I use Cloudflare to handle traffic, improve performance, and add an extra layer of security.
+                  </p>
+              </div>
+              <div className="project-card">
+                  <div className="project-icon">
+                     <img src={serverrackLogo} alt="Serverrack logo"/>
+                  </div>
+                  <h3>File managment</h3>
+                  <p>
+                    I also use my server to store important files, images, and other projects.
+                    It works as my personal cloud storage, where I keep everything organized and accessible.
+                  </p>
               </div>
             </div>
           </div>

@@ -95,22 +95,24 @@ function Cycling() {
         </section>
 
         {/* SCROLLING IMAGES */}
-
+        
         <section className="scroll-image fade-section">
-          {images.map((src, i) => {
-            const min = -15;
-            const max = 15;
-            const rotation = min + (i * (max - min)) / (images.length - 1);
+          <div className="scroll-image-inner">
+            {images.map((src, i) => {
+              const min = -15;
+              const max = 15;
+              const rotation = min + (i * (max - min)) / (images.length - 1);
 
-            return (
-              <img
-                key={i}
-                src={src}
-                alt={`Cycling image ${i}`}
-                style={{ '--rotation': `${rotation}deg` }} // use CSS variable
-              />
-            );
-          })}
+              return (
+                <img
+                  key={i}
+                  src={src}
+                  alt={`Cycling image ${i}`}
+                  style={{ '--rotation': `${rotation}deg` }}
+                />
+              );
+            })}
+          </div>
         </section>
       </div>
     </>

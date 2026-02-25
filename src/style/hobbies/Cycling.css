@@ -172,16 +172,24 @@
 
 /* SCROLLING IMAGE SECTIONS */
 .scroll-image {
-  padding-left: 100px; 
   position: relative;
   width: 100%;
-  max-width: 100vw;        /* add this */
-  overflow-x: hidden;      /* change from overflow: hidden */
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #000;
+  overflow: hidden; /* clip everything at section level */
+}
+.scroll-image-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;         /* this is what actually clips the rotated images */
+  padding: 60px 0;          /* vertical room for rotated corners */
+  padding-left: 90px;
 }
 
 .scroll-image img {

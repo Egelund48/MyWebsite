@@ -2,31 +2,49 @@ import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-d
 import { useEffect } from "react";
 import Homepage from './components/Homepage';
 import About from "./components/About";
-import Projects from "./components/Projects";
 import Cycling from "./components/hobbies/Cycling";
 import Homelabbing from "./components/hobbies/Homelabbing";
 import FootballRatings from "./components/projects/FootballRatings";
 
 function ScrollRestoration() {
   const location = useLocation();
+  const key = location.pathname + location.hash; // include hash for HashRouter
 
   // Restore scroll when page mounts or route changes
   useEffect(() => {
-    const savedScroll = localStorage.getItem(`scrollPos-${location.pathname}`);
-    if (savedScroll) {
-      setTimeout(() => {
+    // Small delay to wait for images and content to render
+    const timeout = setTimeout(() => {
+      const savedScroll = localStorage.getItem(`scrollPos-${key}`);
+      if (savedScroll) {
         window.scrollTo(0, parseInt(savedScroll));
-      }, 50); 
-    }
-  }, [location.pathname]);
+      }
+    }, 50);
 
+    return () => clearTimeout(timeout);
+  }, [key]);
+
+  // Save scroll whenever route changes or user scrolls
   useEffect(() => {
     const saveScroll = () => {
-      localStorage.setItem(`scrollPos-${location.pathname}`, window.scrollY);
+      localStorage.setItem(`scrollPos-${key}`, window.scrollY);
     };
-    window.addEventListener("beforeunload", saveScroll);
-    return () => window.removeEventListener("beforeunload", saveScroll);
-  }, [location.pathname]);
+
+    // Save on scroll continuously (throttled)
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          saveScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [key]);
 
   return null;
 }
@@ -38,7 +56,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/About" element={<About/>}/>
-        <Route path="/Projects" element={<Projects/>}/>
         <Route path="/Hobbies/Cycling" element={<Cycling/>}/>
         <Route path="/Hobbies/Homelabbing" element={<Homelabbing/>}/>
         <Route path="/Projects/Footballratings" element={<FootballRatings/>}/>

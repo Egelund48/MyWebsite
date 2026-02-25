@@ -25,7 +25,6 @@ html, body, #root {
   margin: 0;
   padding: 0;
   background: rgba(0, 0, 0, 0.9);
-  overflow-x: hidden; 
 }
 
 a {

@@ -177,7 +177,6 @@
   width: 100%;
   max-width: 100vw;        /* add this */
   overflow-x: hidden;      /* change from overflow: hidden */
-  overflow-y: visible;     /* keep shadows visible vertically if needed */
   min-height: 100vh;
   display: flex;
   justify-content: center;

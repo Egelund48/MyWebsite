@@ -15,7 +15,7 @@ import '../../style/hobbies/Cycling.css'
 
 function Cycling() {
   const imageRef = useRef(null)
-  const images = [ven, favRoute, bestTime,venner, done, route, fynStats, tur];
+  const images = [ven, bestTime,venner, done, route, fynStats, tur];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -95,7 +95,7 @@ function Cycling() {
         </section>
 
         {/* SCROLLING IMAGES */}
-        
+
         <section className="scroll-image fade-section">
           <div className="scroll-image-inner">
             {images.map((src, i) => {

@@ -1,0 +1,61 @@
+.Other {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative; 
+}
+
+.Other::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;  
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.Other > * {
+    position: relative;
+    z-index: 1;
+}
+
+.Other .content {
+    max-width: 900px;          
+    width: 100%;        
+    padding: 5rem 2.5rem;      
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: none;
+}
+
+.Other .content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.Other .content p {
+    font-size: 1.5rem;
+    line-height: 2;
+    color: #ddd;
+    text-align: left;
+}
+
+.Other .content.animate-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Reuse animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -5,6 +5,7 @@ import About from "./components/About";
 import Cycling from "./components/hobbies/Cycling";
 import Homelabbing from "./components/hobbies/Homelabbing";
 import FootballRatings from "./components/projects/FootballRatings";
+import Other from './components/projects/Other'; 
 
 function ScrollRestoration() {
   const location = useLocation();
@@ -58,7 +59,8 @@ function App() {
         <Route path="/About" element={<About/>}/>
         <Route path="/Hobbies/Cycling" element={<Cycling/>}/>
         <Route path="/Hobbies/Homelabbing" element={<Homelabbing/>}/>
-        <Route path="/Projects/Footballratings" element={<FootballRatings/>}/>
+        <Route path="/Projects/FootballRatings" element={<FootballRatings/>}/>
+        <Route path="/Projects/other" element={<Other />} />
       </Routes>
     </Router>
   );

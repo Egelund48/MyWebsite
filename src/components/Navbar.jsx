@@ -48,6 +48,7 @@ function Navbar() {
         </button>
         <div className={`submenu-inline ${projectsOpen ? 'open' : ''}`}>
           <Link to="/projects/FootballRatings" onClick={closeMenu}>Premier league ratings</Link>
+          <Link to="/projects/other">Other projects</Link>
         </div>
       </div>
     </>

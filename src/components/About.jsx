@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import Navbar from './Navbar.jsx'
 import '../style/About.css'
-import { FaLinkedin, FaGithub, FaGitlab, FaFilePdf, FaEnvelope } from 'react-icons/fa'
+import SocialLinks from './SocialLinks.jsx'
 
 // Import images
 import image1 from '../assets/images/AboutMeImages/img1.jpeg'
@@ -14,46 +14,68 @@ import image6 from '../assets/images/AboutMeImages/img6.jpeg'
 function About() {
   useEffect(() => {
     const track = document.getElementById("image-track");
-    
+
+    // Mouse events
     const handleMouseDown = (e) => {
       track.dataset.mouseDownAt = e.clientX;
     };
-    
+
     const handleMouseUp = () => {
       track.dataset.mouseDownAt = "0";
       track.dataset.prevPercentage = track.dataset.percentage;
     };
-    
+
     const handleMouseMove = (e) => {
-      if(track.dataset.mouseDownAt === "0") return;
-      
-      const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-            maxDelta = window.innerWidth;  
+      if (track.dataset.mouseDownAt === "0") return;
+      const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
+      const maxDelta = window.innerWidth;
       const percentage = (mouseDelta / maxDelta) * -50;
       const nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
-      
+
       track.dataset.percentage = nextPercentage;
-      
-      track.animate({
-        transform: `translate(${nextPercentage}%, -50%)`
-      }, { duration: 150, fill: "forwards" });
-      
-      for(const image of track.getElementsByClassName("image")) {
-        image.animate({
-          objectPosition: `${50 + nextPercentage}% center`
-        }, { duration: 150, fill: "forwards" });
+
+      track.animate(
+        { transform: `translate(${nextPercentage}%, -50%)` },
+        { duration: 150, fill: "forwards" }
+      );
+
+      for (const image of track.getElementsByClassName("image")) {
+        image.animate(
+          { objectPosition: `${50 + nextPercentage}% center` },
+          { duration: 150, fill: "forwards" }
+        );
       }
-};
-    
-    window.addEventListener('mousedown', handleMouseDown);
-    window.addEventListener('mouseup', handleMouseUp);
-    window.addEventListener('mousemove', handleMouseMove);
-    
+    };
+
+    // Touch events
+    const handleTouchStart = (e) => {
+      track.dataset.mouseDownAt = e.touches[0].clientX;
+    };
+
+    const handleTouchMove = (e) => {
+      handleMouseMove({ clientX: e.touches[0].clientX });
+    };
+
+    const handleTouchEnd = () => handleMouseUp();
+
+    // Add event listeners
+    window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("mousemove", handleMouseMove);
+
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchmove", handleTouchMove);
+    window.addEventListener("touchend", handleTouchEnd);
+
     // Cleanup
     return () => {
-      window.removeEventListener('mousedown', handleMouseDown);
-      window.removeEventListener('mouseup', handleMouseUp);
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener("mousemove", handleMouseMove);
+
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchend", handleTouchEnd);
     };
   }, []);
 
@@ -104,24 +126,7 @@ function About() {
           <p>
             I have other hobbies besides Computer Science, such as cycling, homelabbing, going out with friends etc. Feel free to read about them under the subpage Hobbies on my website.
           </p>
-          <div className="social-links">
-            <a href="https://www.linkedin.com/in/christian-egelund-hansen-94586a298/" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin className="social-icon" />
-            </a>
-            <a href="https://github.com/Egelund48" target="_blank" rel="noopener noreferrer">
-              <FaGithub className="social-icon" />
-            </a>            
-            <a href="https://gitlab.sdu.dk/chhan24" target="_blank" rel="noopener noreferrer">
-              <FaGitlab className="social-icon" />
-            </a>
-            <a href="/CV_main.pdf" target="_blank" rel="noopener noreferrer">
-              <FaFilePdf className="social-icon" />
-              <span>CV</span>
-            </a>
-            <a href="mailto:christianegelundhansen@hotmail.com">
-                <FaEnvelope className="social-icon"/>
-            </a>
-          </div>
+          <SocialLinks/>
         </div>
       </div>
     </>

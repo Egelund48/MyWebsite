@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Navbar from './Navbar.jsx'
 import '../style/Homepage.css'
 import image from "../assets/images/me.jpeg"
-import { FaLinkedin, FaGithub, FaGitlab, FaFilePdf, FaEnvelope } from 'react-icons/fa'
+import SocialLinks from './SocialLinks.jsx'
 
 function Homepage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -38,24 +38,7 @@ function Homepage() {
             I am passionate about software development and actively seeking professional opportunities. 
             For more information, please feel free to explore my social media profiles or review my CV.          
           </p>
-          <div className="social-links">
-            <a href="https://www.linkedin.com/in/christian-egelund-hansen-94586a298/" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin className="social-icon" />
-            </a>
-            <a href="https://github.com/Egelund48" target="_blank" rel="noopener noreferrer">
-              <FaGithub className="social-icon" />
-            </a>            
-            <a href="https://gitlab.sdu.dk/chhan24" target="_blank" rel="noopener noreferrer">
-              <FaGitlab className="social-icon" />
-            </a>
-            <a href="/CV_main.pdf" target="_blank" rel="noopener noreferrer">
-              <FaFilePdf className="social-icon" />
-              <span>CV</span>
-            </a>
-            <a href="mailto:christianegelundhansen@hotmail.com">
-                <FaEnvelope className="social-icon"/>
-            </a>
-          </div>
+          <SocialLinks />
         </div>
       </div>
     </>

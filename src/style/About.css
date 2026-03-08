@@ -97,6 +97,7 @@
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
     animation-delay: 0.6s;
+    scroll-snap-type: x mandatory;
 }
 
 /* Fade effect on edges */
@@ -149,6 +150,7 @@
     box-shadow: none;
     filter: brightness(0.95) contrast(0.95);
     transition: all 0.3s ease;
+    scroll-snap-align: center;
 }
 
 /* Make images brighter on hover */

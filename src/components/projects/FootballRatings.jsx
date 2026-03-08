@@ -6,7 +6,7 @@ import Navbar from "../Navbar";
 import 'katex/dist/katex.min.css';
 import { BlockMath, InlineMath } from 'react-katex'
 import teamCode from "./code/TeamCode.js"
-import { FaLinkedin, FaGithub, FaGitlab, FaFilePdf, FaEnvelope } from 'react-icons/fa'
+import SocialLinks from "../SocialLinks.jsx";
 
 /* Images */
 import listTeams from '../../assets/images/Projects/FootballRatings/home.png'; 
@@ -154,24 +154,7 @@ function FootballRatings() {
               This project isn't my finest work, but I learnt a lot developing it. 
               Feel free to check the project out on my Gitlab or contact me on my social media profiles. 
             </p>
-            <div className="social-links">
-              <a href="https://www.linkedin.com/in/christian-egelund-hansen-94586a298/" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin className="social-icon" />
-              </a>
-              <a href="https://github.com/Egelund48" target="_blank" rel="noopener noreferrer">
-                <FaGithub className="social-icon" />
-              </a>            
-              <a href="https://gitlab.sdu.dk/chhan24" target="_blank" rel="noopener noreferrer">
-                <FaGitlab className="social-icon" />
-              </a>
-              <a href="/CV_main.pdf" target="_blank" rel="noopener noreferrer">
-                <FaFilePdf className="social-icon" />
-                <span>CV</span>
-              </a>
-              <a href="mailto:christianegelundhansen@hotmail.com">
-                  <FaEnvelope className="social-icon"/>
-              </a>
-            </div>
+            <SocialLinks />
       </div>
     </div>
     </>

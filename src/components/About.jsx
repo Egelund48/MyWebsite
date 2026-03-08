@@ -114,12 +114,12 @@ function About() {
             <a href="https://gitlab.sdu.dk/chhan24" target="_blank" rel="noopener noreferrer">
               <FaGitlab className="social-icon" />
             </a>
-            <a href="../public/CV.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/CV_main.pdf" target="_blank" rel="noopener noreferrer">
               <FaFilePdf className="social-icon" />
               <span>CV</span>
             </a>
             <a href="mailto:christianegelundhansen@hotmail.com">
-              <FaEnvelope className="social-icon" />
+                <FaEnvelope className="social-icon"/>
             </a>
           </div>
         </div>

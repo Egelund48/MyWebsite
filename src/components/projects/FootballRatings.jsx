@@ -6,7 +6,7 @@ import Navbar from "../Navbar";
 import 'katex/dist/katex.min.css';
 import { BlockMath, InlineMath } from 'react-katex'
 import teamCode from "./code/TeamCode.js"
-import { FaLinkedin, FaGithub, FaGitlab, FaFilePdf } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaGitlab, FaFilePdf, FaEnvelope } from 'react-icons/fa'
 
 /* Images */
 import listTeams from '../../assets/images/Projects/FootballRatings/home.png'; 
@@ -164,9 +164,12 @@ function FootballRatings() {
               <a href="https://gitlab.sdu.dk/chhan24" target="_blank" rel="noopener noreferrer">
                 <FaGitlab className="social-icon" />
               </a>
-              <a href="../public/CV.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/CV_main.pdf" target="_blank" rel="noopener noreferrer">
                 <FaFilePdf className="social-icon" />
                 <span>CV</span>
+              </a>
+              <a href="mailto:christianegelundhansen@hotmail.com">
+                  <FaEnvelope className="social-icon"/>
               </a>
             </div>
       </div>

@@ -6,25 +6,25 @@ import "../style/Homepage.css";
 function SocialLinks() {
   const links = [
     {
-      href: "https://www.linkedin.com/in/christian-egelund-hansen-94586a298/",
-      icon: <FaLinkedin className="social-icon" />,
+        href: "https://www.linkedin.com/in/christian-egelund-hansen-94586a298/",
+        icon: <FaLinkedin className="social-icon" />,
     },
     {
-      href: "https://github.com/Egelund48",
-      icon: <FaGithub className="social-icon" />,
+        href: "https://github.com/Egelund48",
+        icon: <FaGithub className="social-icon" />,
     },
     {
-      href: "https://gitlab.sdu.dk/chhan24",
-      icon: <FaGitlab className="social-icon" />,
+        href: "https://gitlab.sdu.dk/chhan24",
+        icon: <FaGitlab className="social-icon" />,
     },
     {
-      href: "/CV_main.pdf",
-      icon: <FaFilePdf className="social-icon" />,
-      label: "CV",
+        href: `/CV_main.pdf?v=${new Date().getTime()}`,
+        icon: <FaFilePdf className="social-icon" />,
+        label: "CV",
     },
-    {
-      href: "mailto:christianegelundhansen@hotmail.com",
-      icon: <FaEnvelope className="social-icon" />,
+        {
+        href: "mailto:christianegelundhansen@hotmail.com",
+        icon: <FaEnvelope className="social-icon" />,
     },
   ];
 

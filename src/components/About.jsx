@@ -121,7 +121,7 @@ function About() {
           </div>
         </div>
       </div>
-    </>e
+    </>
   )
 }
 

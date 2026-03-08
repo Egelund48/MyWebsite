@@ -3,7 +3,6 @@ import Navbar from './Navbar.jsx'
 import '../style/Homepage.css'
 import image from "../assets/images/me.jpeg"
 import { FaLinkedin, FaGithub, FaGitlab, FaFilePdf, FaEnvelope } from 'react-icons/fa'
-import { FaE } from 'react-icons/fa6'
 
 function Homepage() {
   const [isVisible, setIsVisible] = useState(false)

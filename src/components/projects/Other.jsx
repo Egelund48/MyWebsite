@@ -25,7 +25,7 @@ function Other() {
             studies and in my spare time, simply because I enjoy building and
             learning new things.
             Even while balancing university and personal projects, I structure
-            my time carefully, which allows me to take on a student job
+            my time carefully, which allows me to take on student jobs
             alongside my studies. More details about my additional work will be
             added here as I continue documenting them.
             </p>

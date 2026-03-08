@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import Navbar from './Navbar.jsx'
 import '../style/About.css'
-import { FaLinkedin, FaGithub, FaGitlab, FaFilePdf } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaGitlab, FaFilePdf, FaEnvelope } from 'react-icons/fa'
 
 // Import images
 import image1 from '../assets/images/AboutMeImages/img1.jpeg'
@@ -28,7 +28,7 @@ function About() {
       if(track.dataset.mouseDownAt === "0") return;
       
       const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-            maxDelta = window.innerWidth;  // Changed from window.innerWidth / 2
+            maxDelta = window.innerWidth;  
       const percentage = (mouseDelta / maxDelta) * -50;
       const nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
       
@@ -117,6 +117,9 @@ function About() {
             <a href="../public/CV.pdf" target="_blank" rel="noopener noreferrer">
               <FaFilePdf className="social-icon" />
               <span>CV</span>
+            </a>
+            <a href="mailto:christianegelundhansen@hotmail.com">
+              <FaEnvelope className="social-icon" />
             </a>
           </div>
         </div>

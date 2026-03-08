@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import Navbar from './Navbar.jsx'
 import '../style/Homepage.css'
 import image from "../assets/images/me.jpeg"
-import { FaLinkedin, FaGithub, FaGitlab, FaFilePdf } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaGitlab, FaFilePdf, FaEnvelope } from 'react-icons/fa'
+import { FaE } from 'react-icons/fa6'
 
 function Homepage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -51,6 +52,9 @@ function Homepage() {
             <a href="/CV_main.pdf" target="_blank" rel="noopener noreferrer">
               <FaFilePdf className="social-icon" />
               <span>CV</span>
+            </a>
+            <a href="mailto:christianegelundhansen@hotmail.com">
+                <FaEnvelope className="social-icon"/>
             </a>
           </div>
         </div>

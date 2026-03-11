@@ -92,17 +92,20 @@
     margin-bottom: 2rem;
     text-align: left;
     position: relative;
-    left: -4.5rem;  
+    left: -4.5rem;
+    flex-wrap: nowrap;    /* prevents wrapping to new line */
+    white-space: nowrap;  /* keeps text on one line */
 }
 
 .header-section h1 {
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 2.5vw, 4rem);
     margin: 0;
 }
 
 .profile-image {
-    width: 150px;
-    height: 150px;
+    image-rendering: auto;
+    width: clamp(120px, 10vw, 220px);
+    height: clamp(120px, 10vw, 220px);
     border-radius: 30%;
     object-fit: cover;
     border: 1px solid #fff;

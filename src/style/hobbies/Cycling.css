@@ -63,21 +63,23 @@
     position: relative;
     z-index: 3;
     text-align: center;
-    max-width: 800px;
-    padding: 2rem;
+    max-width: clamp(600px, 60vw, 1200px);
+    padding: clamp(1rem, 3vw, 4rem);
 }
 
 .intro h1 {
-    font-size: 4rem;
-    margin-bottom: 2rem;
+    font-size: clamp(2.5rem, 5vw, 7rem);
+    margin-bottom: clamp(1rem, 2vw, 3rem);
     background: linear-gradient(135deg, #e0e0e0 0%, #ffffff 50%, #cccccc 100%);
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-weight: 800;
     letter-spacing: -0.02em;
 }
 
 .intro p {
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 1.5vw, 1.6rem);
     line-height: 2;
     color: #ddd;
 }
@@ -97,19 +99,19 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 6rem;
+    padding: clamp(3rem, 6vw, 8rem);
+    padding-left: clamp(4rem, 8vw, 12rem);
     color: white;
     z-index: 2;
-    padding-left: 8rem; /* pushes content to the right */
 }
 
 .beginning-content h2 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
+    font-size: clamp(2rem, 3.5vw, 5rem);
+    margin-bottom: clamp(1rem, 2vw, 2.5rem);
 }
 
 .beginning-content p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.3vw, 1.5rem);
     line-height: 1.8;
     color: #ccc;
     max-width: 800px;
@@ -125,9 +127,9 @@
 
 .beginning-image img {
     width: 80%;        
-    max-width: 500px;
+    max-width: clamp(300px, 35vw, 700px);
     height: auto;       
-    border-radius: 30px; 
+    border-radius: clamp(16px, 2vw, 30px); 
     box-shadow: 0 15px 40px rgba(0,0,0,0.6); 
     transition: transform 0.3s ease;
 }
@@ -158,15 +160,15 @@
 }
 
 .learning-content h2 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
+  font-size: clamp(2rem, 3.5vw, 5rem);
+  margin-bottom: clamp(1rem, 2vw, 2.5rem);
 }
 
 .learning-content p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.3vw, 1.5rem);
   text-align: left;
   line-height: 1.8;
-  max-width: 700px;
+  max-width: clamp(500px, 55vw, 900px);
   color: #ccc;
 }
 
@@ -179,22 +181,24 @@
   justify-content: center;
   align-items: center;
   background: #000;
-  overflow: hidden; /* clip everything at section level */
-  padding-left: 90px; 
+  overflow: hidden;
 }
+
 .scroll-image-inner {
   width: 100%;
   max-width: 100%;
   padding: 60px 0;
   display: flex;
+  justify-content: center; /* CENTER the image group */
   align-items: center;
 }
 
 .scroll-image img {
-  height: 440px;      
-  width: auto; 
+  height: clamp(200px, 24vw, 600px);
+  width: auto;
+  flex-shrink: 0;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: clamp(12px, 1.5vw, 24px);
   box-shadow: 0 20px 60px rgba(0,0,0,0.7);
   cursor: pointer;
 
@@ -206,6 +210,7 @@
   transform: translateY(-10px) scale(1.05);
   z-index: 5;
 }
+
 .scroll-image::before {
   content: '';
   position: absolute;
@@ -221,8 +226,9 @@
   pointer-events: none;
 }
 
+/* Overlap between images — responsive via clamp */
 .scroll-image img:not(:first-child) {
-  margin-left: -80px; /* controls overlap amount */
+  margin-left: clamp(-40px, -5vw, -80px);
 }
 
 .scroll-image::after {
@@ -266,6 +272,27 @@
   .learning {
     padding: 3rem 2rem;
   }
+
+
+  .scroll-image-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 40px 1rem;
+  }
+
+  .scroll-image img {
+    height: clamp(180px, 55vw, 340px);
+    width: 80%;
+    object-fit: cover;
+
+    transform: rotate(0deg) !important;
+    margin-left: 0 !important;
+  }
+
+  .scroll-image img:hover {
+    transform: translateY(-6px) scale(1.03) !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -279,5 +306,9 @@
 
   .intro p {
     font-size: 1.1rem;
+  }
+
+  .scroll-image img {
+    width: 80%;
   }
 }

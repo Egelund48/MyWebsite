@@ -199,3 +199,14 @@
 .social-icon {
     font-size: 1.5rem;
 }
+
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 2.2rem;   /* adjust size */
+        white-space: normal; /* allow wrapping */
+        overflow: visible;   /* show all content */
+        text-overflow: unset;/* remove ellipsis */
+        text-align: center;  /* center on mobile */
+        width: 100%;         /* allow full width wrapping */
+    }
+}

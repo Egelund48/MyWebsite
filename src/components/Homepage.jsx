@@ -35,8 +35,9 @@ function Homepage() {
             <li>Datamining</li>
           </ul>
           <p className="closing-text">
-            I am passionate about software development and actively seeking professional opportunities. 
-            For more information, please feel free to explore my social media profiles or review my CV.          
+            I am passionate about software development and currently work at Odense University Hospital (OUH) in the Department of Cardiothoracic and Vascular Surgery as a Junior Full Stack Developer. My work focuses on developing machine learning solutions for lung tumor detection.
+            <br/>
+            Feel free to explore my social media profiles or review my CV.          
           </p>
           <SocialLinks />
         </div>

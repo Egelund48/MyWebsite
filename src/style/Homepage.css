@@ -76,7 +76,7 @@
 }
 
 .Homepage .content p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 2;
     color: #ddd;
     text-align: left;
@@ -195,14 +195,14 @@
 }
 
 .course-list {
-    padding-top: 1px;
+    padding-top: 0px;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 1.8;
     color: #ddd;
     margin-bottom: 1.5rem;
     list-style-position: inside; 
-    padding-left: 3rem;  
+    padding-left: 4rem;  
 }
 
 .course-list li {

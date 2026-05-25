@@ -19,7 +19,9 @@ function Homepage() {
       <div className="Homepage">
         <div className={`content ${isVisible ? 'animate-in' : ''}`}>
           <div className="header-section">
-            <img src={image} alt="Christian Egelund Hansen" className="profile-image" />
+            <div className="profile-image-wrapper">
+              <img src={image} alt="Christian Egelund Hansen" className="profile-image" />
+            </div>
             <div className="title-wrapper">
               <h1>Christian Egelund Hansen</h1>
             </div>

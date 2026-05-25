@@ -51,14 +51,14 @@
     z-index: 1;
 }
 
-.content {
+.About .content {
     max-width: 900px;          
     width: 100%;        
     padding: 5rem 2.5rem;      
     text-align: center;   
 }
 
-.content h1 {
+.About .content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     text-align: left;
@@ -69,14 +69,14 @@
     animation-delay: 0.2s;
 }
 
-.content h2 {
+.About .content h2 {
     font-size: 1.5rem;
     line-height: 1.8;
     color: #ddd;
     text-align: left;
 }
 
-.content p {
+.About .content p {
     /* Animation */
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
@@ -122,7 +122,7 @@
     background: linear-gradient(to left, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
 }
 
-#image-track {
+.About #image-track {
     display: flex;
     gap: 15px;
     position: absolute;
@@ -135,7 +135,7 @@
     padding: 0;  
 }
 
-#image-track > .image {
+.About #image-track > .image {
     width: 50vmin;
     height: 60vmin;
     object-fit: cover;
@@ -154,17 +154,17 @@
 }
 
 /* Make images brighter on hover */
-#image-track > .image:hover {
+.About #image-track > .image:hover {
     filter: brightness(1) contrast(1);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
-#image-track:active {
+.About #image-track:active {
     cursor: grabbing;
 }
 
 /* Social links*/
-.social-links {
+.About .social-links {
     display: flex;
     gap: 1.5rem;
     justify-content: left;
@@ -177,7 +177,7 @@
     animation-delay: 0.8s;
     }
 
-.social-links a {
+.About .social-links a {
     display: flex;
     align-items: left;
     gap: 0.5rem;
@@ -190,13 +190,13 @@
     transition: all 0.3s ease;
 }
 
-.social-links a:hover {
+.About .social-links a:hover {
     background-color: #fff;
     color: #000;
     transform: translateY(-2px);
 }
 
-.social-icon {
+.About .social-icon {
     font-size: 1.5rem;
 }
 

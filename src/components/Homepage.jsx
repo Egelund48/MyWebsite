@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Navbar from './Navbar.jsx'
 import '../style/Homepage.css'
-import image from "../assets/images/me.jpeg"
+import image from "../assets/images/me2.png"
 import SocialLinks from './SocialLinks.jsx'
 
 function Homepage() {

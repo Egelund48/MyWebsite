@@ -56,7 +56,7 @@ function Cycling() {
       <div className="Cycling">
 
         {/* INTRO */}
-        <section className="intro">
+        <section className="intro animate-in">
           <img
             ref={imageRef}
             src={tur}

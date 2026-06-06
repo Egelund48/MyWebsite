@@ -18,8 +18,6 @@ import calender from '../../assets/images/Projects/FootballRatings/calender.png'
 
 
 function FootballRatings() {
-
-  const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
 
   /* Carousel */
@@ -34,25 +32,17 @@ function FootballRatings() {
   const [currentFeature, setCurrentFeature] = useState(0);
 
   const nextFeature = () => {
-    if (currentFeature < features.length - 1) {
-      setCurrentFeature(currentFeature + 1);
-    }
+    setCurrentFeature(prev => Math.min(prev + 1, features.length - 1));
   };
 
   const prevFeature = () => {
-    if (currentFeature > 0) {
-      setCurrentFeature(currentFeature - 1);
-    }
+    setCurrentFeature(prev => Math.max(prev - 1, 0));
   };
-
-  useEffect(() => {
-    setIsVisible(true); 
-  }, []);
   return (
     <>
     <Navbar/>
     <div className="FootballRatings">
-      <div className={`content ${isVisible ? 'animate-in' : ''}`} ref={containerRef}>
+      <div className={"content animate-in"} ref={containerRef}>
         <h1>Football Ratings</h1>
         <p>
           I haven't always liked football, but started to enjoy if when watching with friends and family. I started watching it 
@@ -90,7 +80,7 @@ function FootballRatings() {
             After implementing the different getters and setters for the abstract teams, I made a class for every team. Now i could finaly create a list for the teams. 
           </p>
           <div className="homeList fade-in-up delay-2">
-            <img src={listTeams}/>
+            <img  alt="Premier League teams list" src={listTeams}/>
           </div>
           <p>
             Now I could implement match simulations between two teams. However, instead of 
@@ -117,6 +107,7 @@ function FootballRatings() {
             <div className="carousel">
 
               <button
+                type="button"
                 className="arrow"
                 onClick={prevFeature}
                 disabled={currentFeature === 0}
@@ -131,7 +122,7 @@ function FootballRatings() {
                 >
                   {features.map((feature, index) => (
                     <div className="slide" key={index}>
-                      <img src={feature.image} alt="Feature preview" />
+                      <img src={feature.image} alt={feature.text} />
                       <p>{feature.text}</p>
                     </div>
                   ))}
@@ -139,6 +130,7 @@ function FootballRatings() {
               </div>
 
               <button
+                type="button"
                 className="arrow"
                 onClick={nextFeature}
                 disabled={currentFeature === features.length - 1}

@@ -3,18 +3,13 @@ import Navbar from "../Navbar";
 import '../../style/projects/Other.css'
 
 function Other() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
   return (
     <>
       <Navbar />
 
       <div className="Other">
-        <div className={`content ${isVisible ? "animate-in" : ""}`}>
+        <div className={"content animate-in"}>
           
           <div className="title-wrapper">
             <h1>My Other Projects</h1>

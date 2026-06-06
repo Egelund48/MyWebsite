@@ -30,9 +30,9 @@ function SocialLinks() {
 
   return (
     <div className="social-links">
-      {links.map((link, index) => (
+      {links.map((link) => (
         <a
-          key={index}
+          key={link.name}
           href={link.href}
           target={link.href.startsWith("mailto:") ? "_self" : "_blank"}
           rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}

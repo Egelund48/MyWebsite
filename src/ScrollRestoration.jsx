@@ -14,6 +14,7 @@ export default function ScrollRestoration() {
       setTimeout(() => {
         window.scrollTo(0, parseInt(savedScroll, 10));
       }, 50);
+      return () => clearTimeout(id); 
     }
   }, [key]);
 

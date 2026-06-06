@@ -63,8 +63,8 @@ function About() {
     window.addEventListener("mouseup", handleMouseUp);
     window.addEventListener("mousemove", handleMouseMove);
 
-    window.addEventListener("touchstart", handleTouchStart);
-    window.addEventListener("touchmove", handleTouchMove);
+    window.addEventListener("touchstart", handleTouchStart, { passive : true});
+    window.addEventListener("touchmove", handleTouchMove, { passive : true});
     window.addEventListener("touchend", handleTouchEnd);
 
     // Cleanup

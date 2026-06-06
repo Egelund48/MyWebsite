@@ -5,19 +5,12 @@ import image from "../assets/images/me2.png"
 import SocialLinks from './SocialLinks.jsx'
 
 function Homepage() {
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    // Trigger animation after component mounts
-    setIsVisible(true)
-  }, [])
-
   return (
     <>
       <Navbar />
       
       <div className="Homepage">
-        <div className={`content ${isVisible ? 'animate-in' : ''}`}>
+        <div className={"content animate-in"}>
           <div className="header-section">
             <div className="profile-image-wrapper">
               <img src={image} alt="Christian Egelund Hansen" className="profile-image" />

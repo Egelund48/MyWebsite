@@ -20,20 +20,20 @@ function Homepage() {
             </div>
           </div>
           <p className="intro-text">
-            I'm a 22 year old studying Computer science at Syddansk University. Living in Odense, Denmark. Im currently on my fourth semester, 
+            I'm a 22 year old studying Computer science at Syddansk University. Living in Odense, Denmark. Im currently on my fifth semester, 
             taking the classes:   
           </p>  
           <ul className="course-list">
-            <li>Concurrent programming</li>
-            <li>Operating systems</li>
-            <li>Advanced algorithms</li>
-            <li>Datamining</li>
+            <li>Software Engineering</li>
+            <li>Oversætterkonstruktion (Compilers)</li>
+            <li>Network and Cybersecurity</li>
+            <li>Distributed and Web programming</li>
           </ul>
           <p className="closing-text">
             I am passionate about software development and currently work at Odense University Hospital
             in the Department of Cardiothoracic and Vascular Surgery at the RAPTOR Research Unit as a Junior Full Stack Developer.
             My work focuses on developing a platform that enables radiologists to classify lung tumors,
-            with the collected data being used to support the development of machine learning solutions for lung tumor detection.
+            with the collected data being used to support the development of machine learning solutions for lung tumor detection. 
             <br/>
             Feel free to explore my social media profiles or review my CV.          
           </p>

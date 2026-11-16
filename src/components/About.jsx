@@ -87,7 +87,7 @@ function About() {
         <div className="content">
           <h1>About me</h1>
           <p>
-            I'm a 22 year old studying Computer science at the University of Southern Denmark (Syddansk Universitet). 
+            I'm a 23 year old studying Computer science at the University of Southern Denmark (Syddansk Universitet). 
             I began programming in 2020, where I developed a strong interest in game development.  
             It was however implementing artificial intelligence into these extremely basic games, 
             that opened an entirely new world for me and significantly deepened my interest in the field. 

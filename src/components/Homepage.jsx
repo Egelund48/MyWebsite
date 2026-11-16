@@ -20,7 +20,7 @@ function Homepage() {
             </div>
           </div>
           <p className="intro-text">
-            I'm a 22 year old studying Computer science at Syddansk University. Living in Odense, Denmark. Im currently on my fifth semester, 
+            I'm a 23 year old studying Computer science at Syddansk University. Living in Odense, Denmark. Im currently on my fifth semester, 
             taking the classes:   
           </p>  
           <ul className="course-list">
